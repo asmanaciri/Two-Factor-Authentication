@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return handleSubmit()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            // You can add validation here if needed
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simulate form submission by saving to sessionStorage
+            sessionStorage.setItem('username', username);
+
+            // Redirect to OTP verification page
+            window.location.href = "otp.html";
+            return false;  // Prevent actual form submission
+        }
+    </script>
+</body>
+</html>
